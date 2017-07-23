@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PICKER DESIGN VALUES-->
+    <dimen name="picker_bottom_spacer">20dp</dimen>
+    <dimen name="picker_edittext_height">40dp</dimen>
+    <dimen name="picker_edittext_padding">5dp</dimen>
+    <dimen name="picker_edittext_fontsize">17sp</dimen>
+    <dimen name="picker_listview_height">100dp</dimen>
+    <dimen name="picker_space_height">5dp</dimen>
+
+</resources>
