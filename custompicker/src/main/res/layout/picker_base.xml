@@ -20,7 +20,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableEnd="@drawable/ic_arrow_down"
-            android:drawablePadding="@dimen/picker_edittext_padding"
             android:hint=""
             android:textColor="@color/white"
             android:textColorHint="@color/white"

@@ -116,7 +116,7 @@ public class CustomPicker<T> extends FrameLayout {
 
     public void hidePicker() {
         isPickerVisible = false;
-        resultViewer.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(getContext(), android.R.drawable.arrow_down_float), null);
+        resultViewer.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_down), null);
         itemPicker.startAnimation(slideOut);
         itemWasSelected = false;
     }
