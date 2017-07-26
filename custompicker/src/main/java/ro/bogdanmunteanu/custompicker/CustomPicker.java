@@ -2,6 +2,7 @@ package ro.bogdanmunteanu.custompicker;
 
 import android.animation.LayoutTransition;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
@@ -56,6 +57,16 @@ public class CustomPicker<T> extends FrameLayout {
     public CustomPicker(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FrameLayout );
+        final int N = a.getIndexCount();
+        for (int i = 0; i < N; ++i) {
+            int attr = a.getIndex(i);
+            if(attr == R.styleable.FrameLayout_resultsListHeight)
+            {
+                setResultsViewHeight(a.getDimensionPixelSize(attr,100));
+            }
+        }
+        a.recycle();
     }
 
     public CustomPicker(Context context, AttributeSet attrs, int defStyleAttr) {
@@ -172,6 +183,11 @@ public class CustomPicker<T> extends FrameLayout {
         itemPicker.setLayoutParams(params);
         resultViewer.setCompoundDrawablesWithIntrinsicBounds(null, null, ContextCompat.getDrawable(getContext(), R.drawable.ic_arrow_up), null);
         itemPicker.startAnimation(slideIn);
+    }
+
+    private void setResultsViewHeight(int dimension)
+    {
+        heightListView = dimension;
     }
 
     private void adjustListHeight() {

@@ -27,8 +27,8 @@ public class MainActivity extends AppCompatActivity implements PickerViewActions
         picker2 = (CustomPicker<String>) findViewById(R.id.customPicker);
         String[] strings2= new String[]{"test","test","test","test","test","test"};
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, strings2);
-        picker.setAdapter(adapter);
-        picker.setHint("Test");
+        picker2.setAdapter(adapter2);
+        picker2.setHint("Test");
 
     }
 

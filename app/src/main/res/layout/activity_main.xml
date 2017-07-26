@@ -17,7 +17,8 @@
     <ro.bogdanmunteanu.custompicker.CustomPicker
         android:id="@+id/customPicker"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        picker:resultsListHeight="200dp">
     </ro.bogdanmunteanu.custompicker.CustomPicker>
 
     <ro.bogdanmunteanu.custompicker.CustomPicker
