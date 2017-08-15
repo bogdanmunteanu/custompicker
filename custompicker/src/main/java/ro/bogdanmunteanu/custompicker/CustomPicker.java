@@ -3,6 +3,7 @@ package ro.bogdanmunteanu.custompicker;
 import android.animation.LayoutTransition;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.os.Handler;
 import android.support.v4.content.ContextCompat;
@@ -25,6 +26,8 @@ import ro.bogdanmunteanu.custompicker.interfaces.PickerActions;
 import ro.bogdanmunteanu.custompicker.interfaces.PickerViewActions;
 import ro.bogdanmunteanu.custompicker.listeners.CompositeClickListener;
 import android.support.design.widget.TextInputLayout;
+
+import java.util.List;
 
 /**
  * Created by Bogdan on 7/23/2017.
@@ -57,15 +60,10 @@ public class CustomPicker<T> extends FrameLayout {
     public CustomPicker(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context);
-        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.FrameLayout );
-        final int N = a.getIndexCount();
-        for (int i = 0; i < N; ++i) {
-            int attr = a.getIndex(i);
-            if(attr == R.styleable.FrameLayout_resultsListHeight)
-            {
-                setResultsViewHeight(a.getDimensionPixelSize(attr,100));
-            }
-        }
+        TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.CustomPicker );
+        setResultsViewHeight(Math.round(a.getDimension(R.styleable.CustomPicker_resultsListHeight,100.0f)));
+        setResultViewForegroundColor(a.getInt(R.styleable.CustomPicker_resultsViewTextColor,0));
+        setSpinnerBackground(a.getInt(R.styleable.CustomPicker_spinnerBackground,0));
         a.recycle();
     }
 
@@ -140,6 +138,18 @@ public class CustomPicker<T> extends FrameLayout {
         TextInputLayout resultLayout = (TextInputLayout) findViewById(R.id.result_viewer_layout);
         resultLayout.setHint(hint);
     }
+    public void setTextColor(int color)
+    {
+        TextInputLayout resultLayout = (TextInputLayout) findViewById(R.id.result_viewer_layout);
+        resultLayout.getEditText().setTextColor(color);
+    }
+
+    public void setSpinnerBackground(int color)
+    {
+        ListView spinnerLayout = (ListView) findViewById(R.id.item_picker);
+        spinnerLayout.setBackgroundColor(color);
+    }
+
 
     public Rect getRectForListOnly() {
         Rect r = new Rect();
@@ -188,6 +198,11 @@ public class CustomPicker<T> extends FrameLayout {
     private void setResultsViewHeight(int dimension)
     {
         heightListView = dimension;
+    }
+
+    private void setResultViewForegroundColor(int colour)
+    {
+        resultViewer.setTextColor(colour);
     }
 
     private void adjustListHeight() {

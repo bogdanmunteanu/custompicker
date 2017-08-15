@@ -18,7 +18,9 @@
         android:id="@+id/customPicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        picker:resultsListHeight="200dp">
+        picker:resultsListHeight="200dp"
+        picker:resultsViewTextColor="@color/colorPrimaryDark"
+        picker:spinnerBackground="@color/colorPrimaryDark">
     </ro.bogdanmunteanu.custompicker.CustomPicker>
 
     <ro.bogdanmunteanu.custompicker.CustomPicker

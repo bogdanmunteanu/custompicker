@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:picker="http://schemas.android.com/apk/res-auto"
     android:id="@+id/picker_container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/picker_bottom_spacer"
     android:animateLayoutChanges="true"
     android:orientation="vertical">
 
@@ -24,20 +22,21 @@
             android:hint=""
             android:textColor="@color/white"
             android:textColorHint="@color/white"
-            android:textSize="@dimen/picker_edittext_fontsize"
-            android:theme="@style/EditTextPadding" />
+            android:textSize="@dimen/picker_edittext_fontsize" />
     </android.support.design.widget.TextInputLayout>
 
 
     <android.support.v4.widget.Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/picker_space_height" />
+        android:layout_height="0dp" />
 
     <FrameLayout
         android:id="@+id/list_container"
         android:focusable="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp">
         <ListView
             android:id="@+id/item_picker"
             android:layout_width="match_parent"

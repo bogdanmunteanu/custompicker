@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="FrameLayout">
-    <attr name="resultsListHeight" format="dimension"/>
+    <declare-styleable name="CustomPicker">
+        <attr name="resultsListHeight" format="dimension" />
+        <attr name="resultsViewTextColor" format="color" />
+        <attr name="spinnerBackground" format="color" />
     </declare-styleable>
 </resources>
