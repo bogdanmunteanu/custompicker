@@ -14,7 +14,7 @@ import ro.bogdanmunteanu.custompicker.interfaces.PickerViewActions;
 public class MainActivity extends AppCompatActivity implements PickerViewActions {
 
     CustomPicker<Planet> picker;
-    CustomPicker<Planet> picker2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +30,6 @@ public class MainActivity extends AppCompatActivity implements PickerViewActions
         PlanetAdapter planetAdapter = new PlanetAdapter(this.getApplicationContext(),planets);
         picker.setAdapter(planetAdapter);
         picker.setHint("Test");
-        picker2 = (CustomPicker<Planet>) findViewById(R.id.customPicker);
-        picker2.setAdapter(planetAdapter);
-        picker2.setHint("Test");
-
     }
 
     @Override
