@@ -4,7 +4,7 @@ A fully customizible spinner for picking results with display in a TextInputLayo
 
 ## Gimme that Gradle sweetness, pls?
 ```
-ompile 'ro.bogdanmunteanu:custompicker:0.1.9'
+compile 'ro.bogdanmunteanu:custompicker:0.1.9'
 ```
 Maven:
 ```
